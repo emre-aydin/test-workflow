@@ -13,6 +13,12 @@ imports:
   parameters:
     repository: "https://github.com/emre-aydin/test-workflow.git"
     branch: "main"
+- name: my-requirements-import
+  type: python-requirements
+  parameters:
+    requirements: |
+      numpy==1.20.3
+      requests
 
 steps:
 
@@ -21,7 +27,7 @@ steps:
   config:
     runtime:
       language: python3
-      imports: [welcome-to-orquestra]
+      imports: [welcome-to-orquestra, my-requirements-import]
       parameters:
         file: welcome-to-orquestra/welcome.py
         function: welcome
