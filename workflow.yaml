@@ -17,7 +17,7 @@ imports:
   type: python-requirements
   parameters:
     requirements: |
-      pyfiglet
+      Django==3.2.15
 
 steps:
 
