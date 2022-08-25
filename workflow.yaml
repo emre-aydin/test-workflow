@@ -17,7 +17,7 @@ imports:
   type: python-requirements
   parameters:
     requirements: |
-      numpy==1.20.3
+      pyfiglet
 
 steps:
 
