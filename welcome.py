@@ -3,11 +3,11 @@ This function saves a welcome message.
 """
 
 import json
-# Imported on purpose to test whether python-requirements were installed
-import django
+from jinja2 import Template
 
 def welcome():
-    message = "Welcome to Orquestra!"
+    template = Template('Welcome to {{ name }}!')
+    message = template.render(name='Orquestra')
 
     message_dict = {}
     message_dict["message"] = message
