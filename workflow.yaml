@@ -11,14 +11,13 @@ imports:
 - name: welcome-to-orquestra
   type: git
   parameters:
-    repository: "https://github.com/emre-aydin/test-workflow.git"
-    branch: "main"
+    repository: "git@github.com:zapatacomputing/tutorial-0-welcome.git"
+    branch: "master"
 - name: my-requirements-import
   type: python-requirements
   parameters:
     requirements: |
       numpy==1.20.3
-      requests
 
 steps:
 

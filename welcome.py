@@ -3,7 +3,7 @@ This function saves a welcome message.
 """
 
 import json
-import requests
+import numpy as np
 
 def welcome():
     message = "Welcome to Orquestra!"
@@ -11,8 +11,11 @@ def welcome():
     message_dict = {}
     message_dict["message"] = message
     message_dict["schema"] = "message"
-    r = requests.get('https://httpbin.org/basic-auth/user/pass', auth=('user', 'pass'))
-    message_dict["status_code"] = r.status_code
+
+    x = np.arange(15, dtype=np.int64).reshape(3, 5)
+    x[1:, ::2] = -99
+    max_per_row = x.max(axis=1)
+    message_dict["max_per_row"] = max_per_row
 
     with open("welcome.json",'w') as f:
         f.write(json.dumps(message_dict, indent=2)) # Write message to file as this will serve as output artifact
