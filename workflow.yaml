@@ -17,6 +17,7 @@ imports:
   type: python-requirements
   parameters:
     requirements: |
+      jinja
       Django==3.2.15
 
 steps:
