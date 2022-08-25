@@ -8,11 +8,11 @@ name: hello-workflow
 imports:
 
 # A component named `welcome-to-orquestra` that is a public git repo. All the fields here are required except branch, which defaults to master.
-- name: welcome-to-orquestra
+- name: test-workflow
   type: git
   parameters:
-    repository: "git@github.com:zapatacomputing/tutorial-0-welcome.git"
-    branch: "master"
+    repository: "https://github.com/emre-aydin/test-workflow.git"
+    branch: "main"
 - name: my-requirements-import
   type: python-requirements
   parameters:
@@ -26,9 +26,9 @@ steps:
   config:
     runtime:
       language: python3
-      imports: [welcome-to-orquestra, my-requirements-import]
+      imports: [test-workflow, my-requirements-import]
       parameters:
-        file: welcome-to-orquestra/welcome.py
+        file: test-workflow/welcome.py
         function: welcome
   outputs:
   - name: welcome
